@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Pirade</title>
+</head>
+
+<body>
+  <main>
+    <header>
+      <h1>Hit pirade</h1>
+    </header>
+    <section class="main-content">
+      <section class="add-song">
+        <h2>Add a song</h2>
+        <form>
+          <fieldset>
+            <label for="title">Song title</label>
+            <input type="text" id="title" name="title" placeholder="Title" required />
+          </fieldset>
+          <fieldset>
+            <label for="name">Artist name</label>
+            <input type="text" id="name" placeholder="Artist name" required />
+          </fieldset>
+          <fieldset>
+            <label for="style">Song style</label>
+            <select name="style" id="style" required>
+              <option value="Kilalaky">Kilalaky</option>
+              <option value="Kawitry">Kawitry</option>
+              <option value="slow">slow</option>
+              <option value="Salegy">Salegy</option>
+              <option value="RNB">RNB</option>
+              <option value="Basesa">Basesa</option>
+            </select>
+          </fieldset>
+          <fieldset>
+            <label for="length">Song's length</label>
+            <input type="text" name="length" id="length" placeholder="Length" required />
+          </fieldset>
+          <fieldset>
+            <label for="picture">Artist picture</label>
+            <input type="url" id="picture" name="picture" placeholder="Url of artist pic">
+          </fieldset>
+          <fieldset>
+            <button type="submit">Add</button>
+          </fieldset>
+        </form>
+      </section>
+      <section class="container">
+        <section class="sub-container">
+          <section class="filtered-song">
+            <label for="search">Search a song</label>
+            <input type="search" id="search" name="search" placeholder="Enter a song title...">
+          </section>
+          <section class="filtered-style">
+            <label for="filterd-style">Select style</label>
+            <select name="filterdStyle" id="filterd-style">
+              <option value="Kilalaky">Kilalaky</option>
+              <option value="Kawitry">Kawitry</option>
+              <option value="slow">slow</option>
+              <option value="Salegy">Salegy</option>
+              <option value="RNB">RNB</option>
+              <option value="Basesa">Basesa</option>
+            </select>
+          </section>
+          <button type="reset" class="reset-btn">Reset filter</button>
+        </section>
+        <ul class="list">
+        </ul>
+      </section>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+:root {
+	--blue: #0083c3;
+	--grey-bg: #e5e5e5;
+	--grey-writing: #747474;
+	--grey-light: #f3f3f3;
+	--black: #2e2e2e;
+	--radius: 10px;
+	--shadow: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.1));
+}
+
+@font-face {
+	font-family: 'Inter';
+	src: url('./assets/font/Inter-Medium-slnt=0.ttf') format('ttf');
+}
+
+* {
+  box-sizing: border-box;
+  margin-block-start: 1rem;
+  border-color: transparent;
+}
+
+body {
+	font-family: 'Inter', sans-serif;
+	background-color: var(--grey-bg);
+	font-family: 10px;
+	color: var(--black);
+}
+
+.main-content {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+h1 {
+	font-weight: bold;
+	font-size: 45px;
+	text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+	color: var(--black);
+}
+
+h2 {
+	font-weight: bold;
+	font-size: 22px;
+	line-height: 30px;
+	color: var(--black);
+}
+
+.add-song,
+.list {
+	background: white;
+	border-radius: var(--radius);
+	filter: var(--shadow);
+}
+
+.add-song {
+	padding: 2rem;
+	display: grid;
+	gap: 10px;
+}
+
+/* FORM  */
+
+form {
+	display: flex;
+  flex-direction: column;
+}
+
+input {
+	border: none;
+	box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
+	background-color: var(--grey-light);
+	padding: 0.6rem 1rem;
+	width: 100%;
+	border-radius: 5px;
+	margin-top: 0.3rem;
+	font-size: 14px;
+}
+
+select {
+	border: none;
+	box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
+	background-color: var(--grey-light);
+	height: 2.25rem;
+	width: 100%;
+	border-radius: 5px;
+	color: var(--grey-writing);
+	margin-top: 0.3rem;
+	font-size: 14px;
+}
+
+label {
+	font-size: 11px;
+	line-height: 15px;
+	color: var(--black);
+}
+
+fieldset button {
+	border: none;
+	border-radius: 5px;
+	background-color: var(--blue);
+	color: white;
+	font-size: 14px;
+	text-transform: uppercase;
+	padding: 0.6rem 2rem;
+	cursor: pointer;
+	filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.1));
+}
+
+fieldset button:hover {
+	filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.2));
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.sub-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.score {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.delete{
+  background-color: transparent;
+}
+
+.items-img {
+  width: 100px;
+  height: 100px;
+  padding-block-end: 16px;
+}
+
+.list {
+  padding: 0;
+}

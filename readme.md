@@ -1,45 +1,11 @@
 # WKP8
 
-Hello team! Here's the weekend project 8.
+.1 I built form in the html and then I styled them in the style.css file. I grabed form and ul element. Then, I generated hmtl which will show the items. Then I created an empty array and I pushed the items in it. Afetr that, I created function that increment the score of the songs. After that, I deleted the items.
 
-We're going to build a hit parade.
+2. If I had more times, I would finish my project because there are lots o things that I couldn't finish.
 
-![./assets/hit-parade.jpg](./assets/hit-parade.jpg)
+3. Yes, I did learn many things such us incrementing the score of the song.
 
--   That's a list of songs, sorted from the most popular to the least popular.
--   When we add a new song to the hit parade, the song score is set to zero.
--   The song list is always sorted from the highest score song to the lowest.
--   We can increment the score by clicking the +1 button.
--   We wan delete a song from the list by clicking the bin icon.
--   We can filter the list, by searching for a song title
--   We can filter the list, by selecting a song style in the select.
--   When we click the _reset filters_ button, the filter form is reset, and the list comes back to normal.
--   The data will be saved on the localstorage (except when you filter data)
+4. Filter the tilte song and the style also to icrement the score.
 
-### Tips :
-
--   Focus on the features first, and if you have some time left, try to replicate this design.
--   Start by choosing the song data structure, and create a few of them in the code.
--   Focus on your basic app functionality first, and then try to save the state of your app to _Local Storage_.
-
-Also, please update this readme with the answer to those questions before submitting the project.
-
-### Student report :
-
-1. In a few sentences, explain the structure of your project.
-
-2. If you had more time, what area of your project would you improve?
-
-3. Did you learn anything new while working on this project?
-
-4. What was the most challenging part for you?
-
-5. Would you like a new explanation about a specific topic?
-
-6. Any other comments?
-
-Fork this project and then clone your fork to your computer.
-
-I will download everybody's fork on **_Sunday at 5pm_**.
-
-Good luck everyone! 🔥
+5. It was such a big challenge for me because there lots of new things, however I still enjoyed doing it so much. Thank you for structuring it. It is so kind of you.
