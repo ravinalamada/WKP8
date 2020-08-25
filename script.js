@@ -96,5 +96,5 @@ list.addEventListener('listUpdated', showSong);
 list.addEventListener('listUpdated', setToLocalStorage);
 list.addEventListener('click', handleClick);
 
-// restoreFromLocalStorage();
+restoreFromLocalStorage();
 
