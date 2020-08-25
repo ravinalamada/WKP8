@@ -19,9 +19,9 @@ const showSong = () => {
           <span>${song.length}</span>
         </div>
         <div class="increament">
-          <p>Score:<span class="score">0</span><p>
+          <p>Score:<span id="score">${song.score}</span><p>
           <button
-          type="click" class="counter" onclick="increase()">+1</button>
+          type="click" class="counter" value="${song.id}" onclick="incrementValue()">+1</button>
         </div>
         <button type="button" class="delete" aria-label="Delete the song ${song.title}" value="${song.id}">
           <img class="delete" src="./assets/trash.svg" alt="${song.title} ">
@@ -43,6 +43,7 @@ const addSong = e => {
     style: formEl.style.value,
     length: formEl.length.value,
     picture: formEl.picture.value,
+    score: 0,
     id: Date.now(),
   };
   songs.push(newSong);
@@ -51,20 +52,12 @@ const addSong = e => {
 };
 
 // Inreament the scrore
-var a = 0;
-function increase() {
-  var textBox = document.querySelector("span.score");
-  textBox.textContent = a;
-  a++;
-}
-
-// Filter the song's title
-
-function myFunction() {
-  var input, filter;
-  input = document.getElementById("search");
-  filter = input.value.toUpperCase();
-}
+var i = 0;
+const incrementValue = (e) => {
+  var textBox = document.querySelector("span#score");
+  textBox.textContent = i;
+  i++;
+};
 
 // Handle delete items
 const handleClick = e => {
@@ -81,23 +74,27 @@ const deleteBook = id => {
   list.dispatchEvent(new CustomEvent('listUpdated'));
 };
 
-//Show the list when reoad the page
-const initLocalStorage = () => {
-  const songList = JSON.parse(localStorage.getItem('songs'));
-  if (songList) {
-    songs = songList;
-  }
-  list.dispatchEvent(new CustomEvent('listUpdated'));
+// Store the songs in the local storage
+const setToLocalStorage = () => {
+  const objectStringyfy = JSON.stringify(songs);
+  localStorage.setItem('songs', objectStringyfy);
 };
 
-// we want to update the local storage each time we update delete
-const updateLocalStorage = () => {
-  localStorage.setItem('songs', JSON.stringify(songs));
-};
+const restoreFromLocalStorage = () => {
+  const songLs = JSON.parse(localStorage.getItem('songs'));
+  console.log(songLs);
+
+  if (songLs) {
+    songs.push(...songLs);
+    list.dispatchEvent(new CustomEvent('listUpdated'));
+  };
+}
+
 // Listen to the events
 form.addEventListener('submit', addSong);
 list.addEventListener('listUpdated', showSong);
-window.addEventListener('DOMContentLoaded', showSong);
+list.addEventListener('listUpdated', setToLocalStorage);
 list.addEventListener('click', handleClick);
 
-initLocalStorage();
+// restoreFromLocalStorage();
+
