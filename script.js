@@ -65,11 +65,11 @@ const handleClick = e => {
   if (deleteBtn) {
     console.log('update that book please');
     const id = Number(deleteBtn.value);
-    deleteBook(id);
+    deleteSong(id);
   };
 };
 
-const deleteBook = id => {
+const deleteSong = id => {
   songs = songs.filter(song => song.id !== id);
   list.dispatchEvent(new CustomEvent('listUpdated'));
 };
