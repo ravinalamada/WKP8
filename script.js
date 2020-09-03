@@ -6,7 +6,8 @@ const list = document.querySelector('.list');
 let songs = [];
 
 const showSong = () => {
-  const songHtml = songs.map(song => {
+  const sortedSong = songs.sort((a, b) => b.score - a.score);
+  const songHtml = sortedSong.map(song => {
     return `
       <li class="items">
         <img class="items-img" src="${song.picture}"></img>
@@ -19,9 +20,9 @@ const showSong = () => {
           <span>${song.length}</span>
         </div>
         <div class="increament">
-          <p>Score:<span id="score">${song.score}</span><p>
+          <p id="${song.id}" class="score">Score:${song.score}<p>
           <button
-          type="click" class="counter" value="${song.id}" onclick="incrementValue()">+1</button>
+          type="button" class="counter" value="${song.id}">+1</button>
         </div>
         <button type="button" class="delete" aria-label="Delete the song ${song.title}" value="${song.id}">
           <img class="delete" src="./assets/trash.svg" alt="${song.title} ">
@@ -52,12 +53,25 @@ const addSong = e => {
 };
 
 // Inreament the scrore
-var i = 0;
-const incrementValue = (e) => {
-  var textBox = document.querySelector("span#score");
-  textBox.textContent = i;
-  i++;
+const incrementValue = (id) => {
+  var findSong = songs.find(song => song.id === id);
+  console.log(findSong);
+  // var textBox = document.querySelector("p.score");
+  findSong.score = findSong.score + 1;
 };
+
+const idToUse = (e) => {
+  // console.log('yep');
+  const button = e.target.closest('button.counter');
+  // console.log(button);
+    if(button) {
+      console.log('I am btn');
+      const id = Number(button.value);
+        incrementValue(id);
+    list.dispatchEvent(new CustomEvent('listUpdated'));
+    }
+
+}
 
 // Handle delete items
 const handleClick = e => {
@@ -95,6 +109,7 @@ form.addEventListener('submit', addSong);
 list.addEventListener('listUpdated', showSong);
 list.addEventListener('listUpdated', setToLocalStorage);
 list.addEventListener('click', handleClick);
+list.addEventListener('click', idToUse);
 
 restoreFromLocalStorage();
 
